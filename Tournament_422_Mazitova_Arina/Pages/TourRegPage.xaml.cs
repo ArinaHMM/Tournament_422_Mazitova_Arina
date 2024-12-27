@@ -23,19 +23,16 @@ namespace Tournament_422_Mazitova_Arina.Pages
     {
         Tournament tournament;
         public TourRegPage(Tournament _tournament)
-        {
-            InitializeComponent();
+        {            InitializeComponent();
             DataContext = _tournament;
             tournament = _tournament;
             TourTb.Text = tournament.Name;
         }
 
         private void RegisterBtn_Click(object sender, RoutedEventArgs e)
-        {
-            try
+        {            try
             {
-               
-                int teamId;
+                               int teamId;
                 if (!int.TryParse(IdTeamTb.Text, out teamId))
                 {
                     MessageBox.Show("Пожалуйста, введите корректный номер команды.");

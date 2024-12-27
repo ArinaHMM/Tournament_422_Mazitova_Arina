@@ -14,15 +14,7 @@
                 <Button Content="Выход" Name="ExitBtn" Margin="5" Click="ExitBtn_Click" />
 
                 <Button Visibility="Visible" Name="RegTourBtn" Background="AliceBlue" Click="RegTourBtn_Click">Добавить новый турнир</Button>
-                <!--<TextBlock  Margin="10 0 0 0" VerticalAlignment="Center"> Призовой фонд:</TextBlock>
-                <ComboBox x:Name="FilterCb"  Width="150" Height="35" SelectionChanged="SortCb_SelectionChanged">
-                    <ComboBoxItem>От 0 до 5000</ComboBoxItem>
-                    <ComboBoxItem>От 5000 до 10000</ComboBoxItem>
-                    <ComboBoxItem>От 10000 и более</ComboBoxItem>
-                    <ComboBoxItem>Все</ComboBoxItem>
-                </ComboBox>
-                <TextBlock  Margin="10 0 0 0" VerticalAlignment="Center"> Поиск по игре:</TextBlock>
-                <TextBox   x:Name="SearchTb" TextChanged="SearchTb_TextChanged" Width="160" Height="30"/>-->
+                
             </StackPanel>
         </Grid>
 

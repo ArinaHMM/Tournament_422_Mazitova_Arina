@@ -26,18 +26,15 @@ namespace Tournament_422_Mazitova_Arina.Pages
             TourDG.ItemsSource = App.db.Tournament.ToList();
             TourDG.DataContext = App.db.Tournament.ToList();
         }
-
-        private void RegTourBtn_Click(object sender, RoutedEventArgs e)
+                private void RegTourBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new NewTourPage());
         }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+                private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             TourDG.ItemsSource = App.db.Tournament.ToList();
         }
-
-        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+                private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new WelcomePage());
         }

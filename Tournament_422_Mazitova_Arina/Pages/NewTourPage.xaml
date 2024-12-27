@@ -7,17 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="800"
       Title="NewTourPage">
-
     <Grid Margin="20">
         <StackPanel>
             <TextBlock FontWeight="Bold" FontSize="16" Text="Создать новый турнир" Margin="0,0,0,20" />
-
             <Label Content="Название турнира:" />
             <TextBox x:Name="NameTextBox" Width="300" Margin="0,0,0,10"/>
-
             <Label Content="Дата проведения:" />
             <DatePicker x:Name="DatePicker" Width="300" Margin="0,0,0,10"/>
-
             <Label Content="Количество игроков:" />
             <TextBox x:Name="PlayersCountTextBox" Width="300" Margin="0,0,0,10" />
 

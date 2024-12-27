@@ -23,8 +23,7 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"> Введите название своей команды:</TextBlock>
                 <TextBox Margin="10 0 0 0" Width="70" Name="NameTeamTb"  ></TextBox>
             </StackPanel>
-            <StackPanel>
-                <Button Name="RegisterBtn" Click="RegisterBtn_Click">Продолжить</Button>
+            <StackPanel>                <Button Name="RegisterBtn" Click="RegisterBtn_Click">Продолжить</Button>
             </StackPanel>
         </StackPanel>
     </Grid>
