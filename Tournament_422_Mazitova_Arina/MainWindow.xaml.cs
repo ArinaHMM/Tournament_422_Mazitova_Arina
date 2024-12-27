@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tournament_422_Mazitova_Arina.Pages;
 
 namespace Tournament_422_Mazitova_Arina
 {
@@ -23,6 +24,7 @@ namespace Tournament_422_Mazitova_Arina
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new WelcomePage());
         }
     }
 }

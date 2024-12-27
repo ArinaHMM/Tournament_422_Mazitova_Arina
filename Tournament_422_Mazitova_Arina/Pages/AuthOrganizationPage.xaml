@@ -1,0 +1,26 @@
+﻿<Page x:Class="Tournament_422_Mazitova_Arina.Pages.AuthOrganizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthOrganizationPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" >
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Width="50" Text="Логин:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBox Name="LoginTb" Width="150" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Width="50" Text="Пароль:" VerticalAlignment="Center" HorizontalAlignment="Right" />
+                <TextBox Name="PasswordTb" Width="150" />
+            </StackPanel>
+            <StackPanel>
+                <Button Name="AuthBtn" Click="AuthBtn_Click">Авторизация</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

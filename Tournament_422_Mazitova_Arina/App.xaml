@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

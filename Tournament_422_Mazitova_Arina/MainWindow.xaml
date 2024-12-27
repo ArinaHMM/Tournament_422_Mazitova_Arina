@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Онлайн-турнирная платформа!" Height="450" Width="800">
     <Grid>
+        <Frame Name="MainFrame"></Frame>
         
     </Grid>
 </Window>

@@ -1,0 +1,23 @@
+﻿<Page x:Class="Tournament_422_Mazitova_Arina.Pages.WelcomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="250" d:DesignWidth="800"
+      Title="WelcomePage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" >
+                <TextBlock FontSize="20">
+                    Добро пожаловать в систему! Пожалуйста, введите авторизуйтесь!
+                </TextBlock>
+                <Button Name="GoOrgBtn" FontSize="25" VerticalAlignment="Bottom" Click="GoOrgBtn_Click">Войти как организатор</Button>
+                <Button Name="GoPlayerBtn" FontSize="25" Click="GoPlayerBtn_Click">Войти как игрок</Button>
+                <Button Width="130" Background="#FFF1F1F1" Margin="0 10 0 10">Зарегистрироваться</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
