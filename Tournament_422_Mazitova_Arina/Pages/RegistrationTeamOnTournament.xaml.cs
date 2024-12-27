@@ -37,9 +37,11 @@ namespace Tournament_422_Mazitova_Arina.Pages
                 if(selectedRegistration != null)
                 {
                     NavigationService.Navigate(new NewStatusTournear(StatusDG.SelectedItem as Registration));
-                }
+                } 
             }
+
             }
         }
+
     }
 
