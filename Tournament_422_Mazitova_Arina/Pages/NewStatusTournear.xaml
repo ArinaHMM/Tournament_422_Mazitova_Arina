@@ -5,16 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="50" d:DesignWidth="250"
+      d:DesignHeight="80" d:DesignWidth="250"
       Title="NewStatusTournear">
 
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock>
                 Измените статус заявки:
-                <ComboBox Width="100" Name="edistatuscb"></ComboBox>
+                <ComboBox Width="100" Text="{Binding StatusReg.Name}" Name="edistatuscb"></ComboBox>
             </TextBlock>
             <Button Name="EnterBtn" Click="EnterBtn_Click">Готово</Button>
+            <Button Name="BackBtn" Click="BackBtn_Click">Назад</Button>
         </StackPanel>
     </Grid>
 </Page>

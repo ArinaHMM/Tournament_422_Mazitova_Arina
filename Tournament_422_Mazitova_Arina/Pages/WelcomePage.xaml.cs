@@ -34,5 +34,10 @@ namespace Tournament_422_Mazitova_Arina.Pages
         {
             NavigationService.Navigate(new AuthPlayerPage());
         }
+
+        private void Watcher_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ForWatchers());
+        }
     }
 }

@@ -16,7 +16,7 @@
                 </TextBlock>
                 <Button Name="GoOrgBtn" FontSize="25" VerticalAlignment="Bottom" Click="GoOrgBtn_Click">Войти как организатор</Button>
                 <Button Name="GoPlayerBtn" FontSize="25" Click="GoPlayerBtn_Click">Войти как игрок</Button>
-                <Button Width="130" Background="#FFF1F1F1" Margin="0 10 0 10">Зарегистрироваться</Button>
+                <Button Width="130" Name="Watcher" Background="#FFF1F1F1" Margin="0 10 0 10" Click="Watcher_Click" >Войти как зритель</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

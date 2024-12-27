@@ -27,6 +27,9 @@ namespace Tournament_422_Mazitova_Arina.Pages
             InitializeComponent();
             DataContext = _registration;
             registration = _registration;
+            edistatuscb.ItemsSource = App.db.StatusReg.ToList();
+            edistatuscb.DisplayMemberPath = "Name";
+
         }
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
@@ -36,6 +39,11 @@ namespace Tournament_422_Mazitova_Arina.Pages
             App.db.SaveChanges();
             MessageBox.Show("Готово");
 
+            NavigationService.GoBack();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
             NavigationService.GoBack();
         }
     }

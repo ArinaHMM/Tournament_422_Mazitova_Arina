@@ -14,6 +14,7 @@
                 <Button Name="EditStatusBtn" Margin="10 0 40 0" Click="EditStatusBtn_Click">
                     Изменить статус заявки
                 </Button>
+                <Button Margin="10 0 40 0" Name="TourBackBtn" Click="TourBackBtn_Click" >Турниры</Button>
             </StackPanel>
             <StackPanel>
                 <DataGrid AutoGenerateColumns="True" Name="StatusDG">

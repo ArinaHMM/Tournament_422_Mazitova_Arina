@@ -41,7 +41,13 @@ namespace Tournament_422_Mazitova_Arina.Pages
             }
 
             }
-        }
 
+        private void TourBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddTourOrgPage());
+        }
     }
+    }
+
+    
 
