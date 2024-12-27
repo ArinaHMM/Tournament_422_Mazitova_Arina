@@ -32,7 +32,7 @@ namespace Tournament_422_Mazitova_Arina.Pages
 
         private void GoPlayerBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new WelcomePage());
+            NavigationService.Navigate(new AuthPlayerPage());
         }
     }
 }
