@@ -37,7 +37,7 @@ namespace Tournament_422_Mazitova_Arina.Databases
         public virtual DbSet<StatusReg> StatusReg { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Team> Team { get; set; }
-        public virtual DbSet<Tournament> Tournament { get; set; }
         public virtual DbSet<TourTable> TourTable { get; set; }
+        public virtual DbSet<Tournament> Tournament { get; set; }
     }
 }

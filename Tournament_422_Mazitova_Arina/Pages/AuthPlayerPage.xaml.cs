@@ -34,13 +34,18 @@ namespace Tournament_422_Mazitova_Arina.Pages
             if (App.db.Player.FirstOrDefault(x => x.Login == login && x.Password == password) != null)
             {
                 MessageBox.Show("Добро пожаловать!");
-                NavigationService.Navigate(new WelcomePage());
+                NavigationService.Navigate(new TournearPage());
                 
             }
             else
             {
                 MessageBox.Show("Неверный логин или пароль!");
             }
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

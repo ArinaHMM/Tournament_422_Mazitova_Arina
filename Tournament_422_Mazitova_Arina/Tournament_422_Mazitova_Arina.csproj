@@ -133,11 +133,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddTourOrgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthOrganizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AuthPlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NewTourPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TournearPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TourRegPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,11 +163,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddTourOrgPage.xaml.cs">
+      <DependentUpon>AddTourOrgPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthOrganizationPage.xaml.cs">
       <DependentUpon>AuthOrganizationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AuthPlayerPage.xaml.cs">
       <DependentUpon>AuthPlayerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NewTourPage.xaml.cs">
+      <DependentUpon>NewTourPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TournearPage.xaml.cs">
+      <DependentUpon>TournearPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TourRegPage.xaml.cs">
+      <DependentUpon>TourRegPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>

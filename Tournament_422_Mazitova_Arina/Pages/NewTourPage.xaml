@@ -1,0 +1,56 @@
+﻿<Page x:Class="Tournament_422_Mazitova_Arina.Pages.NewTourPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="800"
+      Title="NewTourPage">
+
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock FontWeight="Bold" FontSize="16" Text="Создать новый турнир" Margin="0,0,0,20" />
+
+            <Label Content="Название турнира:" />
+            <TextBox x:Name="NameTextBox" Width="300" Margin="0,0,0,10"/>
+
+            <Label Content="Дата проведения:" />
+            <DatePicker x:Name="DatePicker" Width="300" Margin="0,0,0,10"/>
+
+            <Label Content="Количество игроков:" />
+            <TextBox x:Name="PlayersCountTextBox" Width="300" Margin="0,0,0,10" />
+
+            <Label Content="Призовой фонд:" />
+            <TextBox x:Name="PrizeTextBox" Width="300" Margin="0,0,0,10" />
+
+            <Label Content="Минимальный рейтинг:" />
+            <TextBox x:Name="MinRangeTextBox" Width="300" Margin="0,0,0,10" />
+
+            <Label Content="Бан:" />
+            <TextBox x:Name="BanComboBox" Width="300" Margin="0,0,0,10">
+
+            </TextBox>
+
+            <Label Content="Игра:" />
+            <ComboBox x:Name="GameComboBox" Text="{Binding Game.Name}" Width="300" Margin="0,0,0,10">
+
+            </ComboBox>
+
+            <Label Content="Формат:" />
+            <ComboBox x:Name="FormatComboBox" Text="{Binding Format.Name}" Width="300" Margin="0,0,0,10">
+
+            </ComboBox>
+
+            <Label Content="Регион:" />
+            <TextBox x:Name="RegionTextBox" Width="300" Margin="0,0,0,10" />
+
+            <Label Content="Категория:" />
+            <ComboBox x:Name="CategoryComboBox" Text="{Binding Category.Name}" Width="300" Margin="0,0,0,10">
+
+            </ComboBox>
+
+            <Button Name="CreateBtn" Content="Создать турнир" Width="150" Height="35" Margin="0,20,0,0" Click="CreateBtn_Click" />
+        </StackPanel>
+    </Grid>
+</Page>

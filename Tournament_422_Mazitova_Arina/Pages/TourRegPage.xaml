@@ -1,0 +1,31 @@
+﻿<Page x:Class="Tournament_422_Mazitova_Arina.Pages.TourRegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="120" d:DesignWidth="400"
+      Title="TourRegPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+            <StackPanel Margin="0,5" Orientation="Horizontal" >
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right">Турнир:</TextBlock>
+                <TextBox HorizontalAlignment="Right" Margin="10 0 0 0" Width="70" IsEnabled="False" Name="TourTb" Text="{Binding Name}" ></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0,5" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"> Введите номер своей команды:</TextBlock>
+                <TextBox Margin="10 0 0 0" Width="70" Name="IdTeamTb"  ></TextBox>
+
+            </StackPanel>
+            <StackPanel Margin="0,5" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right"> Введите название своей команды:</TextBlock>
+                <TextBox Margin="10 0 0 0" Width="70" Name="NameTeamTb"  ></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Name="RegisterBtn" Click="RegisterBtn_Click">Продолжить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

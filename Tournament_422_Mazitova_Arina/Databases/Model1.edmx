@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище TournamentDB_422_Mazitova_ArinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище TournamentDB_422_Mazitova_ArinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
@@ -127,6 +127,7 @@
           <Property Name="ID_Organizarion" Type="int" />
           <Property Name="ID_Category" Type="int" />
           <Property Name="Regional_restrictions" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status_Tour" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TourTable">
           <Key>
@@ -346,8 +347,7 @@
             <End Role="TourTable" EntitySet="TourTable" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TournamentDB_422_Mazitova_ArinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -357,7 +357,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Tournament_Category" FromRole="Category" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Category" FromRole="Category" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Format">
           <Key>
@@ -365,7 +365,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Tournament_Format" FromRole="Format" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Format" FromRole="Format" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Game">
           <Key>
@@ -373,7 +373,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Tournament_Game" FromRole="Game" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Game" FromRole="Game" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Match">
           <Key>
@@ -385,7 +385,7 @@
           <Property Name="Second_team" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="Result" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Match_Tournament" FromRole="Match" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Match_Tournament" FromRole="Match" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Organization">
           <Key>
@@ -395,7 +395,7 @@
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Tournament_Organization" FromRole="Organization" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Organization" FromRole="Organization" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Player">
           <Key>
@@ -425,7 +425,7 @@
           <Property Name="ID_Status_Registration" Type="Int32" />
           <NavigationProperty Name="StatusReg" Relationship="Self.FK_Registration_StatusReg" FromRole="Registration" ToRole="StatusReg" />
           <NavigationProperty Name="Team" Relationship="Self.FK_Registration_Team" FromRole="Registration" ToRole="Team" />
-          <NavigationProperty Name="Tournament" Relationship="Self.FK_Registration_Tournament" FromRole="Registration" ToRole="Tournament" />
+          <NavigationProperty Name="Tournament" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Tournament" FromRole="Registration" ToRole="Tournament" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -474,29 +474,6 @@
           <NavigationProperty Name="Player" Relationship="Self.FK_Player_Team" FromRole="Team" ToRole="Player" />
           <NavigationProperty Name="Registration" Relationship="Self.FK_Registration_Team" FromRole="Team" ToRole="Registration" />
         </EntityType>
-        <EntityType Name="Tournament">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
-          <Property Name="ID_Game" Type="Int32" />
-          <Property Name="ID_Format" Type="Int32" />
-          <Property Name="Players_Count" Type="Int32" />
-          <Property Name="Prize" Type="Int32" />
-          <Property Name="Minimum_rank" Type="Int32" />
-          <Property Name="Forbidden_things" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="ID_Organizarion" Type="Int32" />
-          <Property Name="ID_Category" Type="Int32" />
-          <Property Name="Regional_restrictions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Category" Relationship="Self.FK_Tournament_Category" FromRole="Tournament" ToRole="Category" />
-          <NavigationProperty Name="Format" Relationship="Self.FK_Tournament_Format" FromRole="Tournament" ToRole="Format" />
-          <NavigationProperty Name="Game" Relationship="Self.FK_Tournament_Game" FromRole="Tournament" ToRole="Game" />
-          <NavigationProperty Name="Match" Relationship="Self.FK_Match_Tournament" FromRole="Tournament" ToRole="Match" />
-          <NavigationProperty Name="Organization" Relationship="Self.FK_Tournament_Organization" FromRole="Tournament" ToRole="Organization" />
-          <NavigationProperty Name="Registration" Relationship="Self.FK_Registration_Tournament" FromRole="Tournament" ToRole="Registration" />
-        </EntityType>
         <EntityType Name="TourTable">
           <Key>
             <PropertyRef Name="ID" />
@@ -508,66 +485,6 @@
           <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Player" Relationship="Self.FK_TourTable_Player" FromRole="TourTable" ToRole="Player" />
         </EntityType>
-        <Association Name="FK_Tournament_Category">
-          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tournament">
-              <PropertyRef Name="ID_Category" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tournament_Format">
-          <End Role="Format" Type="Self.Format" Multiplicity="0..1" />
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Format">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tournament">
-              <PropertyRef Name="ID_Format" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tournament_Game">
-          <End Role="Game" Type="Self.Game" Multiplicity="0..1" />
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Game">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tournament">
-              <PropertyRef Name="ID_Game" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Match_Tournament">
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="0..1" />
-          <End Role="Match" Type="Self.Match" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournament">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Match">
-              <PropertyRef Name="ID_Tournament" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tournament_Organization">
-          <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Organization">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tournament">
-              <PropertyRef Name="ID_Organizarion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Player_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Player" Type="Self.Player" Multiplicity="*" />
@@ -640,18 +557,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Registration_Tournament">
-          <End Role="Tournament" Type="Self.Tournament" Multiplicity="0..1" />
-          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournament">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Registration">
-              <PropertyRef Name="ID_Tournament" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="TournamentDB_422_Mazitova_ArinaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="Format" EntityType="Self.Format" />
@@ -665,28 +570,7 @@
           <EntitySet Name="StatusReg" EntityType="Self.StatusReg" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Team" EntityType="Self.Team" />
-          <EntitySet Name="Tournament" EntityType="Self.Tournament" />
           <EntitySet Name="TourTable" EntityType="Self.TourTable" />
-          <AssociationSet Name="FK_Tournament_Category" Association="Self.FK_Tournament_Category">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="Tournament" EntitySet="Tournament" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tournament_Format" Association="Self.FK_Tournament_Format">
-            <End Role="Format" EntitySet="Format" />
-            <End Role="Tournament" EntitySet="Tournament" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tournament_Game" Association="Self.FK_Tournament_Game">
-            <End Role="Game" EntitySet="Game" />
-            <End Role="Tournament" EntitySet="Tournament" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Match_Tournament" Association="Self.FK_Match_Tournament">
-            <End Role="Tournament" EntitySet="Tournament" />
-            <End Role="Match" EntitySet="Match" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tournament_Organization" Association="Self.FK_Tournament_Organization">
-            <End Role="Organization" EntitySet="Organization" />
-            <End Role="Tournament" EntitySet="Tournament" />
-          </AssociationSet>
           <AssociationSet Name="FK_Player_Role" Association="Self.FK_Player_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="Player" EntitySet="Player" />
@@ -711,11 +595,128 @@
             <End Role="Team" EntitySet="Team" />
             <End Role="Registration" EntitySet="Registration" />
           </AssociationSet>
-          <AssociationSet Name="FK_Registration_Tournament" Association="Self.FK_Registration_Tournament">
+          <EntitySet Name="Tournament" EntityType="TournamentDB_422_Mazitova_ArinaModel.Tournament" />
+          <AssociationSet Name="FK_Tournament_Category" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Tournament" EntitySet="Tournament" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tournament_Format" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Format">
+            <End Role="Format" EntitySet="Format" />
+            <End Role="Tournament" EntitySet="Tournament" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tournament_Game" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Game">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="Tournament" EntitySet="Tournament" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Match_Tournament" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Match_Tournament">
+            <End Role="Tournament" EntitySet="Tournament" />
+            <End Role="Match" EntitySet="Match" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tournament_Organization" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Organization">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Tournament" EntitySet="Tournament" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Registration_Tournament" Association="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Tournament">
             <End Role="Tournament" EntitySet="Tournament" />
             <End Role="Registration" EntitySet="Registration" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Tournament">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="ID_Game" Type="Int32" />
+          <Property Name="ID_Format" Type="Int32" />
+          <Property Name="Players_Count" Type="Int32" />
+          <Property Name="Prize" Type="Int32" />
+          <Property Name="Minimum_rank" Type="Int32" />
+          <Property Name="Forbidden_things" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Organizarion" Type="Int32" />
+          <Property Name="ID_Category" Type="Int32" />
+          <Property Name="Regional_restrictions" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Tour" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Category" FromRole="Tournament" ToRole="Category" />
+          <NavigationProperty Name="Format" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Format" FromRole="Tournament" ToRole="Format" />
+          <NavigationProperty Name="Game" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Game" FromRole="Tournament" ToRole="Game" />
+          <NavigationProperty Name="Match" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Match_Tournament" FromRole="Tournament" ToRole="Match" />
+          <NavigationProperty Name="Organization" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Organization" FromRole="Tournament" ToRole="Organization" />
+          <NavigationProperty Name="Registration" Relationship="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Tournament" FromRole="Tournament" ToRole="Registration" />
+        </EntityType>
+        <Association Name="FK_Tournament_Category">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tournament">
+              <PropertyRef Name="ID_Category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tournament_Format">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Format" Role="Format" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Format">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tournament">
+              <PropertyRef Name="ID_Format" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tournament_Game">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Game" Role="Game" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tournament">
+              <PropertyRef Name="ID_Game" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Match_Tournament">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Match" Role="Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournament">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Match">
+              <PropertyRef Name="ID_Tournament" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tournament_Organization">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Organization" Role="Organization" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tournament">
+              <PropertyRef Name="ID_Organizarion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Registration_Tournament">
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Tournament" Role="Tournament" Multiplicity="0..1" />
+          <End Type="TournamentDB_422_Mazitova_ArinaModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournament">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="ID_Tournament" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -840,24 +841,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tournament">
-            <EntityTypeMapping TypeName="TournamentDB_422_Mazitova_ArinaModel.Tournament">
-              <MappingFragment StoreEntitySet="Tournament">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="ID_Game" ColumnName="ID_Game" />
-                <ScalarProperty Name="ID_Format" ColumnName="ID_Format" />
-                <ScalarProperty Name="Players_Count" ColumnName="Players_Count" />
-                <ScalarProperty Name="Prize" ColumnName="Prize" />
-                <ScalarProperty Name="Minimum_rank" ColumnName="Minimum_rank" />
-                <ScalarProperty Name="Forbidden_things" ColumnName="Forbidden_things" />
-                <ScalarProperty Name="ID_Organizarion" ColumnName="ID_Organizarion" />
-                <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
-                <ScalarProperty Name="Regional_restrictions" ColumnName="Regional_restrictions" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TourTable">
             <EntityTypeMapping TypeName="TournamentDB_422_Mazitova_ArinaModel.TourTable">
               <MappingFragment StoreEntitySet="TourTable">
@@ -866,6 +849,25 @@
                 <ScalarProperty Name="Points" ColumnName="Points" />
                 <ScalarProperty Name="ID_Player" ColumnName="ID_Player" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tournament">
+            <EntityTypeMapping TypeName="TournamentDB_422_Mazitova_ArinaModel.Tournament">
+              <MappingFragment StoreEntitySet="Tournament">
+                <ScalarProperty Name="Status_Tour" ColumnName="Status_Tour" />
+                <ScalarProperty Name="Regional_restrictions" ColumnName="Regional_restrictions" />
+                <ScalarProperty Name="ID_Category" ColumnName="ID_Category" />
+                <ScalarProperty Name="ID_Organizarion" ColumnName="ID_Organizarion" />
+                <ScalarProperty Name="Forbidden_things" ColumnName="Forbidden_things" />
+                <ScalarProperty Name="Minimum_rank" ColumnName="Minimum_rank" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+                <ScalarProperty Name="Players_Count" ColumnName="Players_Count" />
+                <ScalarProperty Name="ID_Format" ColumnName="ID_Format" />
+                <ScalarProperty Name="ID_Game" ColumnName="ID_Game" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

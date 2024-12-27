@@ -10,6 +10,9 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" >
+            <StackPanel HorizontalAlignment="Left">
+                <Button Name="backBtn" Click="backBtn_Click">Назад</Button>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,5">
                 <TextBlock Width="50" Text="Логин:" VerticalAlignment="Center" HorizontalAlignment="Right" />
                 <TextBox Name="LoginTb" Width="150" />

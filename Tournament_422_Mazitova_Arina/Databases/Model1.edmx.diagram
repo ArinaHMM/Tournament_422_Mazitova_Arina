@@ -17,20 +17,20 @@
         <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.StatusReg" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.Team" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.Tournament" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.TourTable" Width="1.5" PointX="10.5" PointY="9.5" IsExpanded="true" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Category" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Format" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Game" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Match_Tournament" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Organization" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Player_Role" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Player_Team" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Statistic_Player" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_TourTable_Player" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_StatusReg" ManuallyRouted="false" />
         <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Team" ManuallyRouted="false" />
-        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Tournament" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TournamentDB_422_Mazitova_ArinaModel.Tournament" Width="1.5" PointX="3" PointY="2.625" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Category" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Format" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Game" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Match_Tournament" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Tournament_Organization" />
+        <AssociationConnector Association="TournamentDB_422_Mazitova_ArinaModel.FK_Registration_Tournament" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

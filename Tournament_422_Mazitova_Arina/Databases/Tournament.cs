@@ -33,6 +33,7 @@ namespace Tournament_422_Mazitova_Arina.Databases
         public Nullable<int> ID_Organizarion { get; set; }
         public Nullable<int> ID_Category { get; set; }
         public string Regional_restrictions { get; set; }
+        public string Status_Tour { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Format Format { get; set; }
