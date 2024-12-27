@@ -38,5 +38,16 @@ namespace Tournament_422_Mazitova_Arina.Pages
         {
             NavigationService.Navigate(new WelcomePage());
         }
+
+        private void Page_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            TourDG.ItemsSource = App.db.Tournament.ToList();
+            TourDG.DataContext = App.db.Tournament.ToList();
+        }
+
+        private void RequestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RegistrationTeamOnTournament());
+        }
     }
 }

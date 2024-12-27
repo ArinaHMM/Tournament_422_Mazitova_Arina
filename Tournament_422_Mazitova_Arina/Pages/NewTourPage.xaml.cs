@@ -30,6 +30,7 @@ namespace Tournament_422_Mazitova_Arina.Pages
             FormatComboBox.DisplayMemberPath = "Name";
             CategoryComboBox.ItemsSource = App.db.Category.ToList();
             CategoryComboBox.DisplayMemberPath = "Name";
+            
 
         }
 
@@ -48,6 +49,7 @@ namespace Tournament_422_Mazitova_Arina.Pages
                 //ID_Org = .ID,
                 ID_Category = (CategoryComboBox.SelectedItem as Category).ID,
                 Regional_restrictions = RegionTextBox.Text,
+                Status_Tour = "Предстоит",
 
             };
             App.db.Tournament.Add(tournament);

@@ -145,7 +145,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\NewStatusTournear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\NewTourPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistrationTeamOnTournament.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,8 +180,14 @@
     <Compile Include="Pages\AuthPlayerPage.xaml.cs">
       <DependentUpon>AuthPlayerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NewStatusTournear.xaml.cs">
+      <DependentUpon>NewStatusTournear.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NewTourPage.xaml.cs">
       <DependentUpon>NewTourPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistrationTeamOnTournament.xaml.cs">
+      <DependentUpon>RegistrationTeamOnTournament.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TournearPage.xaml.cs">
       <DependentUpon>TournearPage.xaml</DependentUpon>

@@ -1,0 +1,20 @@
+﻿<Page x:Class="Tournament_422_Mazitova_Arina.Pages.NewStatusTournear"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Tournament_422_Mazitova_Arina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="50" d:DesignWidth="250"
+      Title="NewStatusTournear">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock>
+                Измените статус заявки:
+                <ComboBox Width="100" Name="edistatuscb"></ComboBox>
+            </TextBlock>
+            <Button Name="EnterBtn" Click="EnterBtn_Click">Готово</Button>
+        </StackPanel>
+    </Grid>
+</Page>
